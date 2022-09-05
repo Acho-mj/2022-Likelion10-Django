@@ -1,0 +1,17 @@
+<!--글쓰기 버튼 생성-->
+<a href="{% url 'postcreate' %}">글쓰기</a>
+<br><br>
+
+게시글 {{ posts.count }}개 
+<br>
+
+{% for post in posts %}
+<ul>
+    <li><a href="{% url 'detail' post.id %}">{{ post.title }}</a></li>
+    {% if post.photo %}
+    <img src = "{{ post.photo.url }}" alt="" height="200">
+    {% endif %}
+    <br>
+    {{ post.date|date:'Y-m-d / G시 i분' }}
+</ul>
+{% endfor %}
