@@ -1,0 +1,16 @@
+<h1>메인 홈화면입니다.</h1>
+
+<a href="{% url 'post_new' %}">새 글 작성</a>
+<br>
+<hr>
+<tbody>
+{% for post in posts %}
+<tr>
+    <h4>글 목록</h4>
+	<td><a href = "{% url 'post_detail' post.id %}">제목 : {{ post.title }}</a></td><br>
+    <hr>
+</tr>
+<br><br>
+{% endfor %}
+</tbody>
+
