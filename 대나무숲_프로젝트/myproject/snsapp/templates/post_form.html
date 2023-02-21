@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- 제출 버튼을 눌렀을 때 HTTP POST 요청 -->
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form.as_p}}
+    </table>
+    <br/>
+    <input type="submit" class="btn btn-success btn-icon-split btn-sm" value="create">
+</form>
+{% endblock %}
